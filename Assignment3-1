@@ -1,0 +1,60 @@
+import java.util.Scanner; //brings in the scanner function
+
+public class Java_Assignment {
+    public static void main(String[] args) {
+        System.out.println("Please enter the month between 1-12: ");
+        //creates new scanner called userinput
+        Scanner userinput = new Scanner(System.in);
+        //create new variable for month
+        int month = userinput.nextInt();
+        String monthName = new String("Hello"); //creates string for the months name with place holder
+        int days = 0; //int for days
+        System.out.println("Please enter the year: ");
+        int year = userinput.nextInt();
+        userinput.close(); //closes the scanner once its no longer needed
+        boolean leapYear = (year % 4) == 0; //tests for leap year
+        switch(month) { //switch will find the month and correct days to use
+            case 1: monthName = "January";
+                days = 31;
+                break;
+            case 2: monthName = "February";
+                if(leapYear){
+                    days = 29;
+                } else {
+                    days = 28;
+                }
+                break;
+            case 3: monthName = "March";
+                days = 31;
+                break;
+            case 4: monthName = "April";
+                days = 30;
+                break;
+            case 5: monthName = "May";
+                days = 31;
+                break;
+            case 6: monthName = "June";
+                days = 30;
+                break;
+            case 7: monthName = "July";
+                days = 31;
+                break;
+            case 8: monthName = "August";
+                days = 31;
+                break;
+            case 9: monthName = "September";
+                days = 30;
+                break;
+            case 10: monthName = "October";
+                days = 31;
+                break;
+            case 11: monthName = "November";
+                days = 30;
+                break;
+            case 12: monthName = "December";
+                days = 31;
+                break;
+        }
+        System.out.println(""+monthName+" "+year+" had "+days+" days");
+    }
+}
