@@ -1,0 +1,19 @@
+import java.util.Scanner; //brings in the scanner function
+
+public class Java_Assignment {
+    public static void main(String[] args) {
+        System.out.println("Please enter the side of a hexagon: ");
+        //creates new scanner called userinput
+        Scanner userinput = new Scanner(System.in);
+        double hexSide = userinput.nextDouble(); //holds the side value
+        userinput.close(); //closes the scanner once its no longer needed
+
+        //converts the area with the given side
+        double numerator = (6 * Math.pow(hexSide, 2)); //creates the numerator
+        double denominator = (4 * Math.tan(Math.PI/6)); //creates the denominator
+        double area = numerator/denominator;
+
+        //Prints out area of hexagon
+        System.out.printf("The area of the hexagon is: %.2f", area);
+    }
+}
