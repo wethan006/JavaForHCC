@@ -1,0 +1,30 @@
+import java.util.Scanner; //brings in the scanner function
+
+public class Java_Assignment {
+    public static void main(String[] args) {
+        System.out.println("Please enter a letter: ");
+        //creates new scanner called userinput
+        Scanner userinput = new Scanner(System.in);
+        String charInput = userinput.nextLine(); //holds the letter entered
+        userinput.close(); //closes the scanner once its no longer needed
+        char letter = Character.toUpperCase(charInput.charAt(0)); //makes type char for possible errors if more than one letter is entered
+        String vowels = "AEIOU"; //All vowels
+
+        //compares to see if letter is a letter or not, will return error
+        if(letter >= 'A' && letter <= 'Z') {
+            boolean answer = false; //ture or false used in for loop
+            for (int i = 0; i < 5; i++){ //loop checks for vowel and will change to true
+                if(letter == vowels.charAt(i)) {
+                    answer = true;
+                }
+            }
+            if(answer){ //if true then letter is a vowel else$ it is not
+                System.out.println(charInput.charAt(0) + " is a vowel");
+            } else {
+                System.out.println(charInput.charAt(0) + " is a consonant");
+            }
+        } else {
+            System.out.println(charInput.charAt(0) + " is an invaild input"); //error message
+        }
+    }
+}
