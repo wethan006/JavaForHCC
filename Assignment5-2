@@ -1,0 +1,15 @@
+public class Java_Assignment {
+    public static void main(String[] args) {
+        double tuitionSum = 10000; //variable for tuition
+        for (int i = 1; i < 11; i++) { //Will find the tuition for 10 years
+            tuitionSum = (tuitionSum*0.05) + tuitionSum;
+        }
+        System.out.printf("The tuition of the college after ten years will be: $%.02f", tuitionSum);
+        double fourYears = 0;
+        for(int i = 1; i < 5; i++){
+            fourYears = fourYears+tuitionSum; //amount of tuition after four years
+            tuitionSum = (tuitionSum*0.05) + tuitionSum; //continuing to add tuition for each year
+        }
+        System.out.printf("\nThe amount you would pay in four years after the ten year mark: $%.02f", fourYears);
+    }
+}
