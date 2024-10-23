@@ -1,0 +1,29 @@
+import java.util.Scanner; //brings in the scanner utility
+
+public class Java_Assignment {
+    public static void displaySortedNumbers(double numberOne, double numberTwo, double numberThree){ //method for sorting the numbers
+        double[] holder = {numberOne,numberTwo,numberThree}; //groups the numbers into an array
+        double[] order = {0,0,0}; //creates an array for the new order
+        for(int i = 0; i < 3; i++) { //loops the holder array
+            int check = -1; //How many greater thans a number has, starts at -1 to ensure a 0 everynumber will always get 1 check
+            for(int x = 0; x < 3; x++){ //loops for comparing numbers
+                if(holder[i] >= holder[x]) {
+                    check++;
+                }
+            }
+            order[check] = holder[i]; //Adds the current number based on its check score
+        }
+        System.out.println("These are the numbers in increasing order: " + order[0] + ", " + order[1] + ", " + order[2]); //outputs the order
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); //creates new scanner called input
+        System.out.println("Please enter the first number: ");
+        double numberOne = input.nextDouble(); //gets the first number
+        System.out.println("Please enter the second number: ");
+        double numberTwo = input.nextDouble(); //gets the second number
+        System.out.println("Please enter the third number: ");
+        double numberThree = input.nextDouble(); //gets the third number
+        input.close(); //closes the scanner now that its not needed
+        displaySortedNumbers(numberOne, numberTwo, numberThree);//calls the method
+    }
+}
